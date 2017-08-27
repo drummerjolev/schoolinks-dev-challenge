@@ -1,5 +1,10 @@
 # SchooLinks Dev Challenge
 
+## TLDR;
+
+``cd scheduler``
+``yarn start``
+
 ## General
 
 Given the broad question, I chose to set the following constraints:
@@ -16,3 +21,5 @@ where:
 - requirement is an ``id`` of an existing class
 
 To think about possible course combinations, I used a 3x5 grid.
+
+As suggested by the spec, the scheduling data is loaded from ``scheduler/src/data.js``.

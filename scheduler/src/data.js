@@ -1,8 +1,8 @@
-{
+const data = {
   "classes": [
     {
       "id": "E1",
-      "name": "English Literature",
+      "name": "English Literature 📕",
       "schedule": [
         {
           "day": "Tuesday",
@@ -21,7 +21,7 @@
     },
     {
       "id": "E2",
-      "name": "American Literature",
+      "name": "American Literature 📘",
       "schedule": [
         {
           "day": "Monday",
@@ -40,7 +40,7 @@
     },
     {
       "id": "M1",
-      "name": "Algebra",
+      "name": "Algebra ➗",
       "schedule": [
         {
           "day": "Monday",
@@ -59,7 +59,7 @@
     },
     {
       "id": "M2",
-      "name": "Calculus",
+      "name": "Calculus 📐",
       "schedule": [
         {
           "day": "Monday",
@@ -78,7 +78,7 @@
     },
     {
       "id": "H1",
-      "name": "European History",
+      "name": "European History ⚔️",
       "schedule": [
         {
           "day": "Monday",
@@ -97,7 +97,7 @@
     },
     {
       "id": "H2",
-      "name": "American History",
+      "name": "American History 🇺🇸",
       "schedule": [
         {
           "day": "Thursday",
@@ -116,7 +116,7 @@
     },
     {
       "id": "S1",
-      "name": "Chemistry",
+      "name": "Chemistry 🔮",
       "schedule": [
         {
           "day": "Thursday",
@@ -135,7 +135,7 @@
     },
     {
       "id": "S2",
-      "name": "Physics",
+      "name": "Physics 🌪",
       "schedule": [
         {
           "day": "Monday",
@@ -154,7 +154,7 @@
     },
     {
       "id": "C1",
-      "name": "Drama",
+      "name": "Drama 🎭",
       "schedule": [
         {
           "day": "Monday",
@@ -173,7 +173,7 @@
     },
     {
       "id": "C2",
-      "name": "Fine Arts",
+      "name": "Fine Arts 🎨",
       "schedule": [
         {
           "day": "Tuesday",
@@ -192,7 +192,7 @@
     },
     {
       "id": "C3",
-      "name": "Programming",
+      "name": "Programming 💻",
       "schedule": [
         {
           "day": "Monday",
@@ -211,7 +211,7 @@
     },
     {
       "id": "C4",
-      "name": "Economics",
+      "name": "Economics 💵",
       "schedule": [
         {
           "day": "Thursday",
@@ -230,3 +230,5 @@
     }
   ]
 }
+
+export default data;
