@@ -1,0 +1,15 @@
+A good approach is to start with the different paths to college degrees. Every high school year is represented horizontally as a row containing courses. Each of these courses are linked to courses in the row below or above them. The resulting tree represents all possible paths from initial nodes (the first year of high school) to final nodes (the first of college).
+See Diagram 1 (d1.png).
+
+The next step is to apply requirements on the tree, such as Class B in Year Y requires passing Class A in Year X. Academic (purple), state-level (green) and personal aspirational requirements (orange) are applied on nodes. Restrictions will determine which paths, defined as sets of edges connecting an initial node to a final node, are still available.
+See Diagram 2 (d2.png). Degrees 1, 2, 3 and 4 are available.
+
+Then, we need to apply restrictions on the tree, such as School X not offering Class Y. If you’re in School Y in State Z, some classes might never be offered. 
+See Diagram 3 (d3.png). Degrees 2, 3 and 4 are available.
+
+Finally, we need to take into account at what point in time the students uses SchooLinks. If they onboard in their senior year, all of the requirements on courses in earlier years will make paths unavailable.
+See Diagram 4 (d4.png) where the purple rectangle shows which courses the senior is currently enrolled in. Degrees 2 and 4 are available.
+
+-
+
+From an engineering perspective, we can store the initial tree as an adjacency list. Then, applying restrictions and requirements will break paths in the graphs and since we’re only interested in paths beginning at the initial node and ending at the final node, we can discard an entire row of an adjacency list as soon as a path breaks. This is assuming we’re only interested in the final output of possible paths offered to the student.
