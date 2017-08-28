@@ -2,231 +2,231 @@ const data = {
   "classes": [
     {
       "id": "E1",
+      "category": "English",
       "name": "English Literature 📕",
       "schedule": [
         {
-          "day": "Tuesday",
+          "day": 2,
           "slot": 1
         },
         {
-          "day": "Tuesday",
+          "day": 2,
           "slot": 2
         },
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 1
         }
       ],
-      "requirement": -1
     },
     {
       "id": "E2",
+      "category": "English",
       "name": "American Literature 📘",
       "schedule": [
         {
-          "day": "Monday",
+          "day": 1,
           "slot": 2
         },
         {
-          "day": "Wednesday",
+          "day": 3,
           "slot": 2
         },
         {
-          "day": "Friday",
+          "day": 5,
           "slot": 2
         }
       ],
-      "requirement": -1
     },
     {
       "id": "M1",
+      "category": "Math",
       "name": "Algebra ➗",
       "schedule": [
         {
-          "day": "Monday",
+          "day": 1,
           "slot": 1
         },
         {
-          "day": "Wednesday",
+          "day": 3,
           "slot": 1
         },
         {
-          "day": "Friday",
+          "day": 5,
           "slot": 1
         }
       ],
-      "requirement": -1
     },
     {
       "id": "M2",
+      "category": "Math",
       "name": "Calculus 📐",
       "schedule": [
         {
-          "day": "Monday",
+          "day": 1,
           "slot": 2
         },
         {
-          "day": "Wednesday",
+          "day": 3,
           "slot": 2
         },
         {
-          "day": "Friday",
+          "day": 5,
           "slot": 2
         }
       ],
-      "requirement": -1
     },
     {
       "id": "H1",
+      "category": "History",
       "name": "European History ⚔️",
       "schedule": [
         {
-          "day": "Monday",
+          "day": 1,
           "slot": 3
         },
         {
-          "day": "Tuesday",
+          "day": 2,
           "slot": 3
         },
         {
-          "day": "Wednesday",
+          "day": 3,
           "slot": 3
         }
       ],
-      "requirement": -1
     },
     {
       "id": "H2",
+      "category": "History",
       "name": "American History 🇺🇸",
       "schedule": [
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 2
         },
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 3
         },
         {
-          "day": "Friday",
+          "day": 5,
           "slot": 3
         }
       ],
-      "requirement": -1
     },
     {
       "id": "S1",
+      "category": "Science",
       "name": "Chemistry 🔮",
       "schedule": [
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 2
         },
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 3
         },
         {
-          "day": "Friday",
+          "day": 5,
           "slot": 3
         }
       ],
-      "requirement": -1
     },
     {
       "id": "S2",
+      "category": "Science",
       "name": "Physics 🌪",
       "schedule": [
         {
-          "day": "Monday",
+          "day": 1,
           "slot": 3
         },
         {
-          "day": "Tuesday",
+          "day": 2,
           "slot": 3
         },
         {
-          "day": "Wednesday",
+          "day": 3,
           "slot": 3
         }
       ],
-      "requirement": -1
     },
     {
       "id": "C1",
+      "category": "Elective",
       "name": "Drama 🎭",
       "schedule": [
         {
-          "day": "Monday",
+          "day": 1,
           "slot": 3
         },
         {
-          "day": "Tuesday",
+          "day": 2,
           "slot": 3
         },
         {
-          "day": "Wednesday",
+          "day": 3,
           "slot": 3
         }
       ],
-      "requirement": "E2"
     },
     {
       "id": "C2",
+      "category": "Elective",
       "name": "Fine Arts 🎨",
       "schedule": [
         {
-          "day": "Tuesday",
+          "day": 2,
           "slot": 1
         },
         {
-          "day": "Tuesday",
+          "day": 2,
           "slot": 2
         },
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 1
         }
       ],
-      "requirement": "H1"
     },
     {
       "id": "C3",
+      "category": "Elective",
       "name": "Programming 💻",
       "schedule": [
         {
-          "day": "Monday",
+          "day": 1,
           "slot": 1
         },
         {
-          "day": "Wednesday",
+          "day": 3,
           "slot": 1
         },
         {
-          "day": "Friday",
+          "day": 5,
           "slot": 1
         }
       ],
-      "requirement": "M2"
     },
     {
       "id": "C4",
+      "category": "Elective",
       "name": "Economics 💵",
       "schedule": [
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 2
         },
         {
-          "day": "Thursday",
+          "day": 4,
           "slot": 3
         },
         {
-          "day": "Friday",
+          "day": 5,
           "slot": 3
         }
       ],
-      "requirement": "M1"
     }
   ]
 }

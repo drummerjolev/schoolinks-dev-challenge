@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 
 import './bootstrap/css/bootstrap.min.css';
 
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
+import Table from './Table.js';
 import data from './data.js';
 import './App.css';
+
+function emptyTable() {
+  return [
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+  ];
+}
 
 class App extends Component {
 
   state = {
     options: [],
     selected: [],
+    table: emptyTable(),
   }
 
   componentDidMount() {
@@ -29,20 +38,60 @@ class App extends Component {
     })
   }
 
+  createTable = (courses) => {
+    // matrix holds courses per day per week
+    const table = emptyTable();
+    courses.forEach(course =>
+      course.schedule.forEach(time =>
+        table[time.slot - 1][time.day - 1] = course.name
+      )
+    );
+    return table;
+  }
+
   handleOptionChange = (opt) => {
-    // TODO: update unselectedable options based on clashes
+    const currentSchedule = opt.map(course => course.schedule);
+    // disable options based on time table clashes
+    const options = this.state.options.slice().map(option => {
+      var clashes = 0;
+      currentSchedule.forEach(schedule =>
+        schedule.forEach(time =>
+          option.schedule.forEach(currentTime => {
+            if (currentTime.day === time.day && currentTime.slot === time.slot) {
+              clashes++;
+            }
+          })
+        )
+      )
+      const newOpt = {...option};
+      if (clashes > 0) {
+        newOpt.disabled = true;
+      } else {
+        newOpt.disabled = false;
+      }
+      return newOpt;
+    });
+    const table = this.createTable(opt);
     this.setState({
       selected: opt,
-    })
+      options: options,
+      table: table,
+    });
   }
 
   render() {
-    const { options, selected } = this.state;
+    const { options, selected, table } = this.state;
+    const chosenCategories = selected.map(course => course.category);
+    const missingCategories = ['English', 'Math', 'Science', 'History', 'Elective'].filter(cat =>
+      !chosenCategories.includes(cat)
+    );
+    console.log(missingCategories.length);
     return (
       <div className="container App">
         <h1>Class registration</h1>
         <div className="col-md-4 col-md-offset-4">
           <Select
+            className="selector"
             name="form-field-name"
             value={selected.map(x => x.value)}
             multi={true}
@@ -51,40 +100,14 @@ class App extends Component {
             onChange={this.handleOptionChange}
           />
         </div>
-        <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Body content 1</td>
-            <td>Body content 2</td>
-            <td>Body content 3</td>
-            <td>Body content 4</td>
-            <td>Body content 5</td>
-          </tr>
-          <tr>
-            <td>Body content 1</td>
-            <td>Body content 2</td>
-            <td>Body content 3</td>
-            <td>Body content 4</td>
-            <td>Body content 5</td>
-          </tr>
-          <tr>
-            <td>Body content 1</td>
-            <td>Body content 2</td>
-            <td>Body content 3</td>
-            <td>Body content 4</td>
-            <td>Body content 5</td>
-          </tr>
-        </tbody>
-        </table>
+        <Table
+          data={{
+            headers: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            rows: table,
+          }}
+        />
+        <h4>{missingCategories.length === 0 ? 'Awesome! You can now register for classes 🎉' : 'Choose one course for each of the remaining categories: ' + missingCategories.join(', ')}</h4>
+        {missingCategories.length === 0 ? <a href="https://www.youtube.com/watch?v=XkCyMDrH0us"><button type="button" className="btn btn-primary btn-lg btn-register">Register</button></a> : null}
       </div>
     );
   }

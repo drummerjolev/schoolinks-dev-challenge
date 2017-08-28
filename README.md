@@ -17,8 +17,8 @@ I chose the following object representation for a class:
 where:
 - id is a string based on the course category: M, S, E, H or C. It is appended with an incremental integer to make it unique
 - name is a string
-- schedule is an array of objects where day is a string (e.g. ``"Monday"``) and slot is an integer between 1 and 3
-- requirement is an ``id`` of an existing class
+- schedule is an array of objects where day is an integer between 1 and 5 and slot is an integer between 1 and 3
+(- requirement is an ``id`` of an existing class) dropped: took too much time to implement
 
 To think about possible course combinations, I used a 3x5 grid.
 
