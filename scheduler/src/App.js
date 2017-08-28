@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-
-import './bootstrap/css/bootstrap.min.css';
-
 import Select from 'react-select';
-import 'react-select/dist/react-select.css';
-
 import Table from './Table.js';
 import data from './data.js';
+
+import './bootstrap/css/bootstrap.min.css';
+import 'react-select/dist/react-select.css';
 import './App.css';
 
 function emptyTable() {
@@ -81,11 +79,11 @@ class App extends Component {
 
   render() {
     const { options, selected, table } = this.state;
+    // constraint checker for one course per category
     const chosenCategories = selected.map(course => course.category);
     const missingCategories = ['English', 'Math', 'Science', 'History', 'Elective'].filter(cat =>
       !chosenCategories.includes(cat)
     );
-    console.log(missingCategories.length);
     return (
       <div className="container App">
         <h1>Class registration</h1>
