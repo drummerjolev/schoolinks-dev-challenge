@@ -12,7 +12,7 @@ Given the broad question, I chose to set the following constraints:
 - a day is 3 slots worth a time unit each. They are the same for every workday.
 - the user (a student) needs to choose at least one course in Maths (M.), Science (S.), English (E.), History (H.) and Electives (C.)
 
-I chose the following object representation for a class:
+I chose the following object representation for a course:
 ``{ id, name, schedule: [ { day, slot } ] }``
 where:
 - id is a string based on the course category: M, S, E, H or C. It is appended with an incremental integer to make it unique
@@ -30,6 +30,12 @@ I used React given that it's the frontend framework I'm most comfortable with. U
 - ``selected``: a subset of ``options``, reflecting the current selection made by the user
 - ``table``: a 5x3 matrix initialized with empty strings containing the schedule view fed into the Table component
 
-The React app consists of an App component which contains all of the interaction logic, an external Library (``react-select``) and a stateless component ``Table``.
+The React app consists of an App component which contains all of the user interaction logic, an external Library (``react-select``) and a stateless component ``Table``.
 
 Bootstrap v3 is used as an external CSS stylesheet.
+
+## Question 2, Design Challenge
+
+My answer is in the file ``design-q/schoolinks-challenge.txt``. Four diagrams are available as pngs and are referenced in the answer. I used draw.io for sketching.
+
+Note: I went to high school in Luxembourg and I'm studying in Scotland so my answer might be strongly biased towards a European academic approach.
